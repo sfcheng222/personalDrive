@@ -1,0 +1,26 @@
+<head>
+  <title>comp4021</title>
+</head>
+
+<template name="App_body">
+  {{> navbar}}
+  {{> Template.dynamic template=main}}
+</template>
+
+<template name="navbar">
+  <div class="navbar">
+    <div class="title">Personal Drive</div>
+
+    {{#if currentUser}}
+    <div class="navbar_group">
+      <a id="navbar_logout">Logout</a>
+    </div>
+    {{else}}
+    <div class="navbar_group">
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+    </div>
+    {{/if}}
+  </div>
+</template>
