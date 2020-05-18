@@ -62,12 +62,22 @@ Template.dashboard.helpers({
     return window.location.href
   },
   convertSize: function(size) {
-    console.log(size)
     return (parseInt(size) / 1000).toString().split(".")[0];
   }
 })
 
 Template.dashboard.events({
+  'click .share_url'(event, instance) {
+    var url = $(event.target).data('url')
+	  var textArea = document.createElement("textarea")
+	  textArea.value = url
+	  document.body.appendChild(textArea);
+	  textArea.focus();
+	  textArea.select();
+	  document.execCommand('copy')
+  	  textArea.remove();
+	  $(event.target).text('Copied to Clipboard')
+  },
   'click .delete_file'(event, instance) {
     var fileId = $(event.target).data('id')
     Files.remove({_id: fileId})

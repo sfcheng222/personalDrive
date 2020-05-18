@@ -7,12 +7,14 @@
         <th>File Size</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
       {{#each getUploadedFiles}}
         <tr>
           <td class="file_name">{{name}}</td>
           <td>{{convertSize (size)}} KB</td>
           <td><a class="download_file" href="{{this.url}}" download target="_blank">Download</a></td>
+	  <td><button class="share_url" data-url="{{getWindowUrl}}{{this.url}}">Share Url</button></td>
           <td><button class="delete_file" data-id="{{_id}}">Delete</button></td>
         </tr>
       {{/each}}

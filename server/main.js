@@ -9,9 +9,6 @@ Files.allow({
   insert: function() {
     return true;
   },
-  download: function(userId, doc) {
-    return doc.userId == userId
-  }
 })
 
 Meteor.startup(() => {

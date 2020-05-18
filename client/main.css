@@ -3,6 +3,12 @@ body {
   font-family: sans-serif;
 }
 
+.row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+
 .navbar {
   display: flex;
   flex: 1;
@@ -87,12 +93,12 @@ input {
 }
 
 .block {
-    width: 35%;
+    width: 300px;
     margin: 40px;
     outline: 0;
     border-width: 2px;
     border-bottom: 2px blue solid;
-    padding: 20px 40px;
+    padding: 20px 60px;
 }
 
 .dashboard_table {
@@ -111,10 +117,12 @@ td, th {
 
 .dashboard_table button {
   margin: 0;
+  font-weight: bold;
 }
 
 .download_file {
   color: blue;
+  font-weight: bold;
 }
 
 .delete_file {
